@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "RoundsBlack";
+  src: local("RoundsBlack"),
+  url(../public/fonts/Rounds-Black.woff2) format("truetype");
+  font-weight: bold;
+}
+
 html, body { 
   position: relative;
   max-width: 100%; 

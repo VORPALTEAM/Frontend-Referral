@@ -9,7 +9,7 @@ import {
     StyledText,
     StyledToolsContainer,
   } from "./styles";
-import { Flex, Link } from 'system';
+import { Flex, Link } from 'toolkit';
 
 interface FooterProps {
     items: typeof footerLinks
@@ -28,7 +28,7 @@ const Footer: React.FC<FooterProps> = ({
   }) => {
     return (
       <StyledFooter p={["40px 16px", null, "56px 40px 32px 40px"]} justifyContent="center">
-        <Flex flexDirection="column" width={["100%", null, "1200px;"]}>
+        <Flex flexDirection="column" width={["100%", null, "calc(100% - 40px)"]}>
           <Flex
             order={[2, null, 1]}
             flexDirection={["column", null, "row"]}

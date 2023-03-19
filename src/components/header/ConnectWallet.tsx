@@ -38,6 +38,7 @@ const ConnectWalletBtn = () => {
 
       dispatch(actions.setAddress(""))
       document.cookie = "saleWalletConnected=true;  Max-Age=0;";
+      console.log(State.account)
     }
     
     const VisibleName = ( account ) => {

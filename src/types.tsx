@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes, HTMLAttributes } from "react";
+import { AnchorHTMLAttributes, HTMLAttributes, SVGAttributes } from "react";
 import {
   BackgroundProps,
   BorderProps,
@@ -47,6 +47,11 @@ export type numberAction = {
     payload: number
 }
 
+export type stringArrAction = {
+    type: string,
+    payload: string[]
+  }
+
 export type FooterLinkType = {
     label: string;
     items: { label: string; href?: string; isHighlighted?: boolean }[];  
@@ -60,6 +65,42 @@ export type FooterProps = {
     cakePriceUsd?: number;
     currentLang: string;
 } & FlexProps;
-  
 
-export type modals = 'none' | 'generate' | 'withdraw'
+export interface SvgProps extends SVGAttributes<HTMLOrSVGElement>, SpaceProps {
+    spin?: boolean;
+  }
+  
+export type IconComponentType = {
+    iconName: string;
+    isActive?: boolean;
+    height?: string;
+    width?: string;
+    activeColor?: string;
+    activeBackgroundColor?: string;
+  } & SvgProps;
+
+export type PromoItemData = {
+    id: number,
+    icon: string,
+    heading: string,
+    description: string,
+    expHeading: string,
+    expDescription: string,
+    expLink: string,
+    expLinkText: string,
+    textIcon: boolean
+}
+
+export type MediaQueries = {
+    xs: string;
+    sm: string;
+    md: string;
+    lg: string;
+    xl: string;
+    xxl: string;
+    nav: string;
+    mobile: string;
+    pc: string;
+  };
+
+export type modals = 'none' | 'generate' | 'withdraw' | "link" | "note"
