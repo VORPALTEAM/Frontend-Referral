@@ -27,6 +27,7 @@ const PromoPage = () => {
       width: 100%;
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
     `
     const InviterBlock = styled.div`
        width: 325px;
@@ -48,7 +49,7 @@ const PromoPage = () => {
             <TabHeadingSection>
               <Text color="#FFFFFF" fontWeight="500" fontSize="32px">How to invite friends</Text>
               <InviterBlock>
-                <Text mt="8px" ml="42px" color="#FFFFFF" fontWeight="400" fontSize="16px">My inviter:   318asd...rwhe</Text>
+                <Text mt="8px" ml="28px" color="#FFFFFF" fontWeight="400" fontSize="16px">My inviter:   318asd...rwhe</Text>
                 <AscBlock style={{
                   maxHeight: 28,
                   width: 65,

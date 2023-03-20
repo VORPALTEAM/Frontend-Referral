@@ -16,7 +16,11 @@ const MenuSection = ({ isMobile = false}) => {
           itemClass += " starmap--btn"
         }
         if (item.style === styles.sale) {
-          itemClass += " green--btn"
+          itemClass += " green--btn inActive"
+        }
+
+        if (item.style === styles.default && item.url === "/") {
+          itemClass += " active"
         }
   
         return(

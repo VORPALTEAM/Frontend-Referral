@@ -32,8 +32,8 @@ const Footer: React.FC<FooterProps> = ({
           <Flex
             order={[2, null, 1]}
             flexDirection={["column", null, "row"]}
-            justifyContent="space-between"
             alignItems="flex-start"
+            justifyContent="center"
             mb={["42px", null, "36px"]}
           >
             {items?.map((item) => (

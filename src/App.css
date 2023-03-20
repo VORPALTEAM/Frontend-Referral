@@ -143,11 +143,22 @@ video::-webkit-media-controls {
   margin: 10px;
 }
 
+.inActive {
+  color: #D9D9D94D;
+  background: none;
+  text-shadow: none;
+}
+
 
 .menu--item a {
   color: #FFF;
   text-decoration: none;
 }
+
+.active a {
+  color: #ACF800;
+}
+
 
 .main--submenu {
   position: absolute;
@@ -212,6 +223,24 @@ video::-webkit-media-controls {
 }
 
 .green--btn a {
+  background: #ACF800;
+  border-radius: 4px;
+  padding: 4px 12px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.green--btn.inActive a {
+  border: 1px solid #ACF800;
+  background: transparent;
+  border-radius: 4px;
+  padding: 4px 12px;
+  color: #ACF800;
+  text-transform: uppercase;
+}
+
+.green--btn.inActive a:hover,
+.green--btn.inActive a:focus {
   background: #ACF800;
   border-radius: 4px;
   padding: 4px 12px;
@@ -355,13 +384,6 @@ video::-webkit-media-controls {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0px 0px 20px #3E12F0;
-}
-
-.inActive {
-  color: #D9D9D94D;
-  -webkit-text-fill-color:#D9D9D94D !important;
-  background: none;
-  text-shadow: none;
 }
 
 .switch--token {

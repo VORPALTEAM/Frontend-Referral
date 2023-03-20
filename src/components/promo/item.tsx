@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components'
 import { Text} from 'toolkit'
 import { SubtractIcon } from 'toolkit/Svg'
 import { PromoItemData } from 'types'
+import { mediaQueries } from 'config'
 
 interface Data {
     item: PromoItemData 
@@ -24,8 +25,13 @@ const PromoStep = styled.div`
    }
 `
 const PromoCard = styled.div`
-  width: 33%;
+  width: 31%;
   display: block;
+  margin: 1%;
+
+  ${mediaQueries.mobile} {
+     width: 100%;
+  }
 `
 
 const StepSection = styled.div`
@@ -82,7 +88,8 @@ const PromoItem = ({ item } : Data) => {
             <a href={item.expLink} style={{
                 display: "flex"
             }}>
-              <Text mt="10px" fontSize="20px" fontWeight="600" textAlign="left" color="primary" >{item.expLinkText}</Text>
+              <Text mt="10px" fontSize="20px" fontWeight="600" textAlign="left" 
+              color="#ACF800;" textDecoration="none">{item.expLinkText}</Text>
               <LocalSubtractIcon />
             </a>
           </PromoStepFooter>

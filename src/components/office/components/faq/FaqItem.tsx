@@ -11,7 +11,7 @@ const FaqItem = ({question,  answer}) => {
   }
   
   const FaqHeading = styled(Box)`
-       width: 48%;
+       width: 45%;
        height: 60px;
        background: #352F44;
        color: #F1F6F9;

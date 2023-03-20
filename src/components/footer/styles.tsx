@@ -10,7 +10,7 @@ export const StyledList = styled.ul`
   margin-bottom: 40px;
 
   @media screen and (min-width: 852px) {
-    margin-bottom: 0px;
+    margin: 0 60px;
   }
 `;
 

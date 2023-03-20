@@ -24,6 +24,12 @@ export const menu = [
         submenu: []
     }, */
     {
+      name: "Referral",
+      url: "/",
+      style: styles.default,
+      submenu: []
+    },
+    {
         name: "Starmap",
         url: `https://starmap.vorpal.finance/`,
         style: styles.starmap,
