@@ -6,6 +6,11 @@ import { footerLinks } from 'components/footer/FooterConfig';
 import PromoPage from 'components/promo';
 import { RootState } from 'state/reducer';
 import './App.css';
+import Office from 'components/office';
+import WithdrawSection from 'components/WithdrawSection';
+import ReferralHero from 'components/ReferralHero';
+import ModalRefContainer from 'components/modals';
+import ProgressSection from 'components/InProgress';
 
 function App() {
 
@@ -13,16 +18,22 @@ function App() {
      return state
   })
 
+
   return (
     <div className="App">
       <Header />
       {!State.account ? <PromoPage /> :
-      <div style={{ minHeight: 200, color: "#FFF", paddingTop: 200, textAlign: 'center' }}>
-            In progress
+      <div className="office--page"> 
+          <ReferralHero account={State.account} />
+          <ProgressSection message="List of rewards now in progress" />
+          {/* <WithdrawSection />
+          <Office /> */}
       </div>}
       <Footer items={footerLinks} />
+      <ModalRefContainer />
     </div>
   );
 }
 
 export default App;
+

@@ -49,7 +49,7 @@ const PersonalLink = ({ linkId }) => {
   `
   const CopyIcon = styled(CopyClipboardIcon)`
      position: absolute;
-     margin-left: 478px;
+     margin-left: 538px;
      cursor: pointer;
 
      &:hover,

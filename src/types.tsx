@@ -103,4 +103,4 @@ export type MediaQueries = {
     pc: string;
   };
 
-export type modals = 'none' | 'generate' | 'withdraw' | "link" | "note"
+export type modals = 'none' | 'generate' | 'withdraw' | "link" | "note" | "history"

@@ -1,10 +1,6 @@
-import styled, { DefaultTheme } from "styled-components";
+import styled from "styled-components";
 import { space, typography, layout } from "styled-system";
 import { TextProps } from "types";
-
-interface ThemedProps extends TextProps {
-  theme: DefaultTheme;
-}
 
 const getColor = ( color : string ) => {
   return color;

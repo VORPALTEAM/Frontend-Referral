@@ -5,6 +5,26 @@
   font-weight: bold;
 }
 
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Thin'), local('Roboto-Thin'), 
+  url('../public/fonts/Robotothin.woff2') format('woff2'), 
+  url('../public/fonts/Robotothin.woff') format('woff'), 
+  url('../public/fonts/Robotothin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), local('Roboto-Regular'), 
+  url('../public/fonts/Roboto.woff2') format('woff2'), 
+  url('../public/fonts/Roboto.woff') format('woff'), 
+  url('../public/fonts/Roboto.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 html, body { 
   position: relative;
   max-width: 100%; 
@@ -55,6 +75,21 @@ body {
   to {
     transform: rotate(-1deg);
   }
+}
+
+
+.office--page {
+  margin: 0 64px;
+}
+
+.Progress--section {
+   width: 100%;
+   height: 300px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 50px;
+   color: #FFF;
 }
 
 .rotate--anim {
@@ -1309,4 +1344,214 @@ input:checked + .checker:before {
   .main--submenu {
     margin-left: -55px;
   }
+}
+
+.referral--box {
+  width: 100%;
+  min-height: 128px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #5C258D 0%, #4389A2 100%);
+  padding: 32px;
+}
+
+/* .ref--content {
+   padding-top: 20px;
+} */
+
+.heading--row {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  min-width: 560px;
+}
+
+.ref--add--link {
+  display: flex;
+}
+
+.YoullGet--Block {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.YouGet--Section {
+  width: 72%;
+  min-height: 76px;
+  background: linear-gradient(90deg, #C33764 0%, #1D2671 100%);
+  border-radius: 6px;
+}
+
+.FriendsGet--Section {
+  width: 26%;
+  min-height: 100px;
+  background: linear-gradient(90deg, #673AB7 0%, #512DA8 100%);
+  border-radius: 6px;
+}
+
+.Note--Block {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.GetBlockHead--Text {
+  margin: 9px 0 0 9px;
+  font-family: Roboto;
+  font-size: 16px;
+  color: #FFF;
+  font-weight: 500;
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+.MoreSymbol--Section {
+  width: 30px;
+  height: 90px;
+  margin-top: -35px;
+  display: block
+}
+
+.Divider--Block {
+  width: 10px;
+  height: 20px;
+  margin: 10px;
+  border-left: 1px solid #FFFFFF;
+}
+
+.NoteBlock {
+  margin-top: 20px;
+  display: flex;
+}
+
+.Note--Text {
+  line-height: 1.5;
+  margin-left: 5px;
+  margin-top: 5px;
+  font-weight: 100;
+  color: #FFF;
+}
+
+.Withdraw--Section {
+  float: right;
+  width: 20%;
+  min-width: 440px;
+  min-height: 220px;
+  background: #E0EAFC;
+  background-image: url('../public/images/referral/withdraw_vorpal.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.CheckBox--Place {
+    width: 30px;
+    height: 30px;
+    background: rgba(53, 47, 68);
+    border-radius: 6px;
+}
+
+.Percent--Btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  min-height: 40px;
+  margin-top: 20px;
+}
+
+.Value--Section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  background: rgba(53, 47, 68, 0.1);
+  border-radius: 6px;
+}
+
+.Percent--Section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.Percent--Section.percent--right {
+  padding-right: 24px;
+}
+
+.RefModal--Window {
+  position: fixed;
+  top: 266px;
+  left: calc(50% - 277px);
+  width: 554px;
+  min-height: 300px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #B3B3B3 100%);   ;
+  border-radius: 40px;
+  z-index: 199;
+  display: block;
+
+}
+
+
+.RefModal--Window.active {
+  display: block;
+}
+
+
+.Note--Input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  background: #352F4433; 
+  border-radius: 6px;
+}
+
+.Note--Hint {
+  position: absolute;
+  display: flex;
+  margin-top: -34px;
+  margin-left: 4px;
+}
+
+.StyledCard--Overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #2D2D2D;
+  opacity: 0.7;
+  z-index: 190;
+  display: none;
+}
+
+.StyledCard--Overlay.active {
+  display: block
+}
+
+.WithdrawNumber--Input {
+  width: 100%;
+  height: 60px;  
+  background: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px 1px #D3CEE0, inset 0px 0px 5px 2px rgba(0, 0, 0, 0.15);
+}
+
+.WithdrawAll--Btn {
+  position: absolute;
+  height: 52px;  
+  margin-top: 4px;
+  margin-left: -132px;
+  background: #352F44;
+  color: #FFFFFF;
+  font-size: 18px;
+  border-radius: 6px;
+  text-transform: none;
 }
