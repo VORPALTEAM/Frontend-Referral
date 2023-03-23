@@ -4,8 +4,9 @@ import styled, { keyframes } from 'styled-components'
 import copy from 'copy-to-clipboard';
 import { ShareReferralIcon, 
          CopyClipboardIcon } from 'toolkit/Svg'
-import CopyModal from './notify/copyModal'
+import CopyModal from './modals/notify/copyModal'
 import { actions } from 'state/reducer'
+import { notifyNames } from 'config';
 
 const PersonalLink = ({ linkId }) => {
 
@@ -15,7 +16,10 @@ const PersonalLink = ({ linkId }) => {
 
   const CopyLink = () => {
     copy(referralLink)
-    dispatch(actions.notifyCopy("1"))
+    dispatch(actions.notify(notifyNames.copy))
+    setTimeout(() => {
+      dispatch(actions.notify(notifyNames.none))
+    }, 3000)
   }
 
 

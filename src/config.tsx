@@ -28,6 +28,20 @@ export const breakpointMap: { [key: string]: number } = {
     xxl: 1200,
   };
 
+export const modalNames = {
+   none: "none",
+   link: "link",
+   note: "note",
+   withdraw: "withdraw",
+   history: "history"
+}
+
+export const notifyNames = {
+   none: "none",
+   copy: "copy",
+   share: "share"
+}
+
 export const mediaQueries: MediaQueries = {
     xs: `@media screen and (min-width: ${breakpointMap.xs}px)`,
     sm: `@media screen and (min-width: ${breakpointMap.sm}px)`,

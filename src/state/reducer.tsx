@@ -6,14 +6,14 @@ const openedModal : modals= 'none'
 const actionNames = {
     setAddress: "SET_ADDRESS",
     openModal: "OPEN_MODAL",
-    notifyCopy: "notify",
+    notify: "notify",
     setIds: "ids"
 }
 
 export const actions = {
     setAddress: createAction<string>(actionNames.setAddress),
     openModal: createAction<string>(actionNames.openModal),
-    notifyCopy: createAction<string>(actionNames.notifyCopy),
+    notify: createAction<string>(actionNames.notify),
     setIds: createAction<string[]>("ids")
 }
 
@@ -37,7 +37,7 @@ const SelectModal = (state = openedModal, action: stringAction) => {
 
 const SetNotify = (state = "", action: stringAction) => {
   switch(action.type) {
-      case actionNames.notifyCopy : 
+      case actionNames.notify : 
         return action.payload
       default :
         return state

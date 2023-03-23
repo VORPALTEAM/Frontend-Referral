@@ -5,8 +5,10 @@ import EditNote from './EditNote'
 import GenerateLink from './GenerateLink'
 import WithdrawModal from './Withdraw'
 import WithdrawHistory from './WithdrawHistory'
-import CopyModal from '../notify/copyModal'
+import CopyModal from './notify/copyModal'
 import { RootState, actions } from 'state/reducer'
+import { modalNames, notifyNames } from 'config'
+import ShareModal from './notify/shareModal'
  
 const ModalRefContainer = () => {
 
@@ -23,18 +25,25 @@ const ModalRefContainer = () => {
 
     function currentWindow ( windowName ) {
       switch (windowName) {
-        case "note" :
+        case modalNames.note :
           return <EditNote />
-          break;
-        case "withdraw" :
+        case modalNames.withdraw :
           return <WithdrawModal />
-          break;
-        case "link" :
+        case modalNames.link :
           return <GenerateLink />
-          break;
-        case "history" :
+        case modalNames.history :
           return <WithdrawHistory />
-          break;
+        default: 
+          return null;
+      }
+    }
+
+    function currentNotify ( windowName ) {
+      switch (windowName) {
+        case notifyNames.copy:
+          return <CopyModal />
+        case modalNames.withdraw :
+          return <ShareModal />
         default: 
           return null;
       }
@@ -43,7 +52,7 @@ const ModalRefContainer = () => {
     return(
         <>
           {currentWindow(State.modal)}
-          {(State.notify === "1") ? <CopyModal /> : null}
+          {currentNotify(State.notify)}
           <div className={`StyledCard--Overlay${State.modal && State.modal !== "none" ? " active" : ""}`} onClick={OverlayClose}  />
         </>
     )

@@ -12,7 +12,7 @@ import { GoldPercentText } from 'toolkit/Custom/GoldPercentText'
 import { RootState, actions } from 'state/reducer'
 import PersonalLink from './PersonalLink'
 import * as Hooks from 'state/hooks'
-import CopyModal from './notify/copyModal'
+import CopyModal from './modals/notify/copyModal'
 import { defaultCreatorPercent, defaultReferralPercent } from '../config'
 
 const PersonalLinkBlock = ({ account }) => {
