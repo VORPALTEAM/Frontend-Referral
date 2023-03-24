@@ -13,7 +13,7 @@ import { RootState, actions } from 'state/reducer'
 import PersonalLink from './PersonalLink'
 import * as Hooks from 'state/hooks'
 import CopyModal from './modals/notify/copyModal'
-import { defaultCreatorPercent, defaultReferralPercent } from '../config'
+import { defaultCreatorPercent, defaultReferralPercent, modalNames } from '../config'
 
 const PersonalLinkBlock = ({ account }) => {
 
@@ -27,17 +27,17 @@ const PersonalLinkBlock = ({ account }) => {
   const dispatch = useDispatch()
 
   const LinkCreationStart = () => {
-    dispatch(actions.openModal("link"))
+    dispatch(actions.openModal(modalNames.login))
     setActive(true)
   }
 
   const NoteCreationStart = () => {
-    dispatch(actions.openModal("note"))
+    dispatch(actions.openModal(modalNames.note))
     setActive(true)
   }
 
   async function handleStatusChange () {
-    if (!isRequested) {
+    if (!isRequested && State.account) {
 
       const refLinks = await Hooks.RequestLinks(clientAccount)
 
@@ -95,19 +95,29 @@ const PersonalLinkBlock = ({ account }) => {
             fontFamily="Roboto" color="rgb(241, 246, 249)">
             {'My Referral Link'}
             </Heading>
-            <div className="ref--add--link">
+            {!State.account ? <div className="ref--add--link">
                <Text 
                   onClick={LinkCreationStart}
                   color="rgb(241, 246, 249)" fontSize="16px" fontFamily="Roboto" fontWeight="700">
-                  Create new link</Text><PlusIcon width="26px" height="26px" />
-            </div>
+                  Create new link
+                </Text>
+                <PlusIcon width="26px" height="26px" />
+            </div> : null}
           </div>
-          {State.refLinks.map((ref) => {
-             return <PersonalLink linkId={ref} />
-          })}
+          {State.account ? State.refLinks.map((ref, index) => {
+             return index === 0 ? <PersonalLink linkId={ref} /> : null
+          }) : null}
           <div className="YoullGet--Block">
               <div className="YouGet--Section">
-                <GetBlockHeadText>You will get</GetBlockHeadText>
+                <div className="get--section--inner">
+                  <div className="partner--counter">
+                     1300
+                  </div>
+                  <div className="partner--counter--heading">
+                     People are <br />assigned to the link
+                  </div>
+                </div>
+                {/* <GetBlockHeadText>You will get</GetBlockHeadText>
                 <div style={{
                   display: 'flex',
                   justifyContent: 'space-between',
@@ -122,19 +132,19 @@ const PersonalLinkBlock = ({ account }) => {
                     <div className="Divider--Block" />
                   </div>
                   <Text color="#FFFFFF" mr="40px" mt="9px">Swaps <b>10%</b></Text>
-                </div>
+                </div> */}
               </div>
-              <div className="FriendsGet--Section">
+              {/* <div className="FriendsGet--Section">
                 <GetBlockHeadText>Friends will get</GetBlockHeadText>
                 <GoldPercentText>{defaultReferralPercent}%</GoldPercentText>
-              </div>
+              </div> */}
           </div>
-          <div className="NoteBlock" onClick={NoteCreationStart}>
+          {/* <div className="NoteBlock" onClick={NoteCreationStart}>
             <PencilReferralIcon width="28px" height="28px" color="white" stroke="white" />
             <div className="Note--Text">
                Note
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </Flex>

@@ -58,9 +58,9 @@ const ReferralHero = ({ isLogin = true, account = "" }) => {
          </a>}
        <BorderedHeading />
       </Flex>
-      {isLogin ? <Flex>
+      <Flex>
         <PersonalLinkBlock account={account} />
-      </Flex> : null}
+      </Flex>
     </Flex>
   )
 }

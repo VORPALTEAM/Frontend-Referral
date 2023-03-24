@@ -667,17 +667,21 @@ input:checked + .checker:before {
 .value--subtitle {
    margin-top: 15px;
    font-size: 13px;
+   text-transform: uppercase;
+   text-align: center;
+   width: 100%;
 }
 
 .value--subtitle.red {
   font-size: 10px;
   color: #FF0000;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .value--subtitle.green {
   font-size: 10px;
-  color: #AAF765;
+  color: #00A10D;
+  font-weight: 500;
 }
 
 .row--1 {
@@ -1267,11 +1271,6 @@ input:checked + .checker:before {
     text-decoration: none !important;
   }
 
-  .value--subtitle {
-    font-size: 10px;
-  }
-
-
   .dsc--btn {
     top: 42px;
     margin-left: 21px;
@@ -1346,16 +1345,6 @@ input:checked + .checker:before {
     height: 137.5px;
   }
 
-  .value--subtitle {
-    margin-top: 36px;
-    font-size: 20px;
-  }
-
-  .value--subtitle.red,
-  .value--subtitle.green {
-    font-size: 16px;
-  }
-
   .stage--heading {
     padding: 16px 0;
     height: 52px;
@@ -1405,7 +1394,7 @@ input:checked + .checker:before {
 }
 
 .YouGet--Section {
-  width: 72%;
+  width: 100%;
   min-height: 76px;
   background: linear-gradient(90deg, #C33764 0%, #1D2671 100%);
   border-radius: 6px;
@@ -1474,6 +1463,7 @@ input:checked + .checker:before {
   background-position: right bottom;
   border-radius: 20px;
   overflow: hidden;
+  margin-top: -60px;
 }
 
 .CheckBox--Place {
@@ -1649,4 +1639,27 @@ input:checked + .checker:before {
 
 .copy--close--icon img {
   margin: 5px;
+}
+
+.get--section--inner {
+  display: flex;
+  padding: 20px;
+}
+
+.partner--counter {
+   color: #F8D300;
+   font-size: 64px;
+   font-weight: 500;
+}
+
+.partner--counter--heading {
+   color: #F1F6F9;
+   font-size: 32px;
+   font-weight: 500;
+   margin-left: 40px;
+}
+
+.withdraw--value--block {
+   width: 50%;
+   margin-top: 20px;
 }

@@ -41,7 +41,7 @@ const PersonalLink = ({ linkId }) => {
     }
   `
   const RefInput = styled.input`
-     width: calc(100% - 50px);
+     width: 100%;
      min-width: 300px;
      background: transparent;
      border: 1px solid #FFF;
@@ -49,11 +49,10 @@ const PersonalLink = ({ linkId }) => {
      color: #F1F6F9;
      font-size: 16px;
      padding: 10px;
-     margin-right: 10px;
   `
   const CopyIcon = styled(CopyClipboardIcon)`
      position: absolute;
-     margin-left: 538px;
+     margin-left: 590px;
      cursor: pointer;
 
      &:hover,
@@ -62,18 +61,18 @@ const PersonalLink = ({ linkId }) => {
      }
   `
 
-  const LocalShareReferralIcon = styled(ShareReferralIcon)`
+  /* const LocalShareReferralIcon = styled(ShareReferralIcon)`
     margin-left: 4px;
     margin-top: 6px
-  `
+  ` */
 
   return (
     <LinkBlock>
        <RefInput type="text" title={referralLink} value={imagineReferralLink} />
        <CopyIcon width="29px" height="29px" onClick={CopyLink} />
-       <ShareBlock>
-          <LocalShareReferralIcon width="29px" height="29px" />
-       </ShareBlock>
+       {/*<ShareBlock>
+          <LocalShareReferralIcon width="29px" height="29px" /> 
+       </ShareBlock> */}
     </LinkBlock>
   )
 }

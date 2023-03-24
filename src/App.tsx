@@ -25,8 +25,8 @@ function App() {
       {!State.account ? <PromoPage /> :
       <div className="office--page"> 
           <ReferralHero account={State.account} />
-          <ProgressSection message="List of rewards now in progress" />
-          {/* <WithdrawSection />
+          <WithdrawSection />
+          {/* <ProgressSection message="List of rewards now in progress" />
           <Office /> */}
       </div>}
       <Footer items={footerLinks} />

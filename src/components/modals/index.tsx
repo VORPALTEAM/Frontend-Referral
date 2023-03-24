@@ -9,6 +9,7 @@ import CopyModal from './notify/copyModal'
 import { RootState, actions } from 'state/reducer'
 import { modalNames, notifyNames } from 'config'
 import ShareModal from './notify/shareModal'
+import LoginModal from './login'
  
 const ModalRefContainer = () => {
 
@@ -33,6 +34,8 @@ const ModalRefContainer = () => {
           return <GenerateLink />
         case modalNames.history :
           return <WithdrawHistory />
+        case modalNames.login :
+          return <LoginModal />
         default: 
           return null;
       }

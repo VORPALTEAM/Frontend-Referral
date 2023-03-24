@@ -37,13 +37,13 @@ const WithdrawSection = () => {
         flexDirection={['column-reverse', null, null, 'row']}
         width="100%"
         justifyContent="flex-end"
-        mt="40px"
+        mb="80px"
         id="referral-hero">
             <div className="Withdraw--Section">
                 <Flex mt="20px" ml="20px">
-                    <Text fontWeight="700">Swaps Referral</Text>
+                    <Text fontWeight="300">Swaps Referral</Text>
                     <AscBlock>
-                        <Text fontWeight="700" ml="12px" mt="6px">10%</Text>
+                        <Text fontWeight="300" ml="12px" mt="6px">5%</Text>
                         <AskIcon style={{
                               marginLeft: 4,
                               marginTop: 4,
@@ -56,10 +56,17 @@ const WithdrawSection = () => {
                         }} width="37px" height="34px" />
                     <Text ml="6px" onClick={WithdrawHistoryOpen}>History</Text>
                 </Flex>
-                <Text ml="20px" mt="20px" fontSize="32px" fontWeight="700" width="100%">0.0000 VRP</Text>
-                <StyledButton onClick={WithdrawStart} mt="40px" ml="20px">
+                <div className="withdraw--value--block">
+                   <div className="value--subtitle red">locked</div>
+                   <Text ml="20px" fontSize="32px" fontWeight="500" width="100%">0.0000 VRP</Text>
+                </div>
+                <div className="withdraw--value--block">
+                   <div className="value--subtitle green">unlocked</div>
+                   <Text ml="20px" fontSize="32px" fontWeight="500" width="100%">0.0000 VRP</Text>
+                </div>
+                  {/* <StyledButton onClick={WithdrawStart} mt="40px" ml="20px">
                     Withdraw
-                 </StyledButton>
+                 </StyledButton> */}
             </div>
         </Flex>
       )

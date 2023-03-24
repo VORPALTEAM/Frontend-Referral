@@ -33,7 +33,8 @@ export const modalNames = {
    link: "link",
    note: "note",
    withdraw: "withdraw",
-   history: "history"
+   history: "history",
+   login: "login"
 }
 
 export const notifyNames = {
