@@ -31,9 +31,10 @@ const Footer: React.FC<FooterProps> = ({
         <Flex flexDirection="column" width={["100%", null, "calc(100% - 40px)"]}>
           <Flex
             order={[2, null, 1]}
-            flexDirection={["column", null, "row"]}
+            flexDirection={["row", null, "row"]}
+            flexWrap={["wrap", null, null, null]}
             alignItems="flex-start"
-            justifyContent="center"
+            justifyContent={[null, null, "center"]}
             mb={["42px", null, "36px"]}
           >
             {items?.map((item) => (

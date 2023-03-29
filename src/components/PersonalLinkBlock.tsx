@@ -41,8 +41,6 @@ const PersonalLinkBlock = ({ account }) => {
 
       const refLinks = await Hooks.RequestLinks(clientAccount)
 
-      console.log(refLinks)
-
       try {
         let linkArray = Array.from(refLinks.result)
 
@@ -86,7 +84,9 @@ const PersonalLinkBlock = ({ account }) => {
   `  
 
   return (
-    <Flex flexDirection="column" alignItems="center" justifyContent="space-between">
+    <Flex flexDirection="column" 
+    width={['100%', null, null, null]}
+    alignItems="center" justifyContent="space-between">
       <div className="referral--box"> 
         <div className="ref--content">
           <div className="heading--row">

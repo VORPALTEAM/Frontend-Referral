@@ -1466,6 +1466,7 @@ input:checked + .checker:before {
   margin-top: -60px;
 }
 
+
 .CheckBox--Place {
     width: 30px;
     height: 30px;
@@ -1662,4 +1663,24 @@ input:checked + .checker:before {
 .withdraw--value--block {
    width: 50%;
    margin-top: 20px;
+}
+
+@media (max-width: 857px) {
+  .Withdraw--Section {
+    width: 100%;
+    margin-top: 40px;
+    min-width: 100px;
+  }
+
+  .referral--box {
+    width: 88%;
+  }
+
+  .partner--counter {
+    font-size: 32px;
+  }
+
+  .partner--counter--heading {
+    font-size: 16px;
+  }
 }

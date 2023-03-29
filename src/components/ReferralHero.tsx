@@ -5,6 +5,7 @@ import { Heading } from '../toolkit/Heading'
 import { SubtractIcon } from '../toolkit/Svg'
 import BorderedHeading from 'components/HeadingBorder'
 import PersonalLinkBlock from './PersonalLinkBlock'
+import { mediaQueries } from 'config'
 
 const ReferralHero = ({ isLogin = true, account = "" }) => {
 
@@ -17,6 +18,11 @@ const ReferralHero = ({ isLogin = true, account = "" }) => {
      .yellow {
         color: #F8D300;
         font-weight: 400;
+      }
+
+    ${mediaQueries.mobile} {
+        width: 100%;
+        text-align: center;
       }
   `
 
@@ -31,20 +37,28 @@ const ReferralHero = ({ isLogin = true, account = "" }) => {
     margin-top: 4px
   `
 
+  const HeroHeading = styled(Heading)`
+    
+    ${mediaQueries.mobile} {
+      width: 100%;
+      text-align: center;
+    }
+  `
+
   return (
     <Flex position="relative"
-    flexDirection={['column-reverse', null, null, 'row']}
+    flexDirection={['column', null, null, 'row']}
     width="100%"
     justifyContent="space-between"
     id="referral-hero"
     pt="100px">
       <Flex
-       width='35%'
+       width={['100%', '100%', '30%', '35%']}
        flexDirection='column'
        >
-       <Heading as="h5" scale="xl" color="#ACF800" width="533px" mt="30px" mb="21px">
+       <HeroHeading as="h5" scale="xl" color="#ACF800" width="533px" mt="30px" mb="21px">
         {'Invite your friends. Earn cryptocurrency together'}
-       </Heading>
+       </HeroHeading>
        <BorderedHeading />
          <Description mb="21px" width="556px">Earn up to <b className="yellow">20%</b> from friends swap commission on VORPAL and <b className="yellow">5%</b> from their earnings on Farms and Launch pools.</Description>
          {isLogin ? 

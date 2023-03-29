@@ -6,7 +6,7 @@ import { ShareReferralIcon,
          CopyClipboardIcon } from 'toolkit/Svg'
 import CopyModal from './modals/notify/copyModal'
 import { actions } from 'state/reducer'
-import { notifyNames } from 'config';
+import { mediaQueries, notifyNames } from 'config';
 
 const PersonalLink = ({ linkId }) => {
 
@@ -59,6 +59,12 @@ const PersonalLink = ({ linkId }) => {
      &:focus {
        opacity: 0.3;
      }
+
+    ${mediaQueries.mobile} {
+      margin-left: 79%;
+      padding: 4px;
+      background: linear-gradient(90deg, #48739d 10%, #4389A2 100%)
+    }
   `
 
   /* const LocalShareReferralIcon = styled(ShareReferralIcon)`
