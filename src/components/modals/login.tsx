@@ -31,7 +31,7 @@ const LoginModal = () => {
   return (
      <div className="RefModal--Window active">
       <ModalHeader background="transparent">
-        <Flex alignItems="center" style={{ flex: 1 }}>
+        <Flex alignItems="center" flexDirection="column" style={{ flex: 1 }}>
           <RefModalHeading title="Login" />
           <CloseButton onClick={CloseWindow} />
         </Flex>
@@ -39,6 +39,9 @@ const LoginModal = () => {
     <RefModalBody  style={{
         padding: "20px 24px"
      }}>
+       <div className="Login--btn--desc">
+           We need to know your wallet to generate a your unique link
+       </div>
        <div className="Buttons" style={{
           display: 'flex',
           justifyContent: 'space-between',

@@ -1,21 +1,26 @@
 import React, {useState} from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import styled, { keyframes } from 'styled-components'
 import { Flex,  
          Text, 
          ModalHeader } from 'toolkit'        
-import { actions } from 'state/reducer'
+import { actions, RootState } from 'state/reducer'
 import {
   CloseButton, 
   RefModalHeading, 
   RefModalBody,
   StyledButton } from './common'
 import { Button } from 'toolkit/Button'
+import Web3 from 'web3'
+import { connectOptions, rpc } from 'config'
 
 const WithdrawModal = () => {
 
 
   const dispatch = useDispatch()
+  const State = useSelector((state: RootState) => {
+    return state
+ })
 
   const CloseWindow = () => {
     dispatch(actions.openModal("none"))
@@ -32,6 +37,21 @@ const WithdrawModal = () => {
      border-radius: 6px;
      text-transform: none;
   `
+
+  const WithdrawRequest = async() => {
+     const msg = "withdraw"
+     const acc = State.account
+     if (acc) {
+      const web3 = new Web3(Web3.givenProvider || rpc)
+      const signature = await web3.eth.personal.sign(msg, acc, '');
+      console.log(signature)
+      const time = String(Math.round(new Date().getTime() / 1000))
+      const recover = await web3.eth.personal.ecRecover(msg, signature)
+      console.log(recover)
+     } else {
+        return false;
+     }
+  }
 
   return (
      <div className="RefModal--Window active">
@@ -54,7 +74,7 @@ const WithdrawModal = () => {
           justifyContent: 'space-between',
           marginTop: 40
        }}>
-           <StyledButton width="100%" disabledStyle={0} onClick={CloseWindow} btnText="Withdraw" />
+           <StyledButton width="100%" disabledStyle={0} onClick={WithdrawRequest} btnText="Withdraw" />
        </div>
     </RefModalBody>
     </div>

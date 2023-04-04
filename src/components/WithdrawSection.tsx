@@ -50,11 +50,11 @@ const WithdrawSection = () => {
                               marginRight: 12
                         }} color="tertiary" />
                     </AscBlock>
-                    <ClockAgainst style={{
+                    {/* <ClockAgainst style={{
                               marginLeft: "25%",
                               marginTop: -4
                         }} width="37px" height="34px" />
-                    <Text ml="6px" onClick={WithdrawHistoryOpen}>History</Text>
+                    <Text ml="6px" onClick={WithdrawHistoryOpen}>History</Text> */}
                 </Flex>
                 <div className="withdraw--value--block">
                    <div className="value--subtitle red">locked</div>

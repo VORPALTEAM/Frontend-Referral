@@ -7,10 +7,11 @@ import { Button, IconButton } from 'toolkit/Button'
 import { CloseIcon } from 'toolkit/Svg'
 
 
-export const CloseButton = ({ onClick, marginLeft = 266 }) => {
+export const CloseButton = ({ onClick, marginLeft = 475 }) => {
    const CloseBtn = styled(IconButton)`
       position: absolute;
       margin-left: ${marginLeft}px;
+      margin-top: 8px;
    `
    return(
       <CloseBtn variant="text" aria-label="Close the dialog" onClick={onClick}>

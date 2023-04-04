@@ -8,7 +8,7 @@ export const ModalHeader = styled.div<{ background?: string }>`
   padding: 12px 24px;
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 90%;
   margin: auto;
 `;
 

@@ -1665,6 +1665,12 @@ input:checked + .checker:before {
    margin-top: 20px;
 }
 
+.Login--btn--desc {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+
 @media (max-width: 857px) {
   .Withdraw--Section {
     width: 100%;
