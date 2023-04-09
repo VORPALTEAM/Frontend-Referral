@@ -103,4 +103,15 @@ export type MediaQueries = {
     pc: string;
   };
 
+export type KPI = {
+   refNumber: number;
+   balanceLocked: number;
+   balanceAvailable: number;
+}
+
+export type KPIAction = {
+   type: string;
+   payload: KPI
+}
+
 export type modals = 'none' | 'generate' | 'withdraw' | "link" | "note" | "history"

@@ -1,15 +1,17 @@
 import React, {useState} from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { Flex, Text } from 'toolkit'
-import { actions } from 'state/reducer'
+import { RootState, actions } from 'state/reducer'
 import { AskIcon, ClockAgainst } from 'toolkit/Svg'
 import { AscBlock } from 'toolkit/Custom/GoldPercentText'
 import { Button } from 'toolkit/Button'
 
 const WithdrawSection = () => {
 
-
+    const State = useSelector((state: RootState) =>{
+      return state
+    })
     const dispatch = useDispatch()
     const [popupActive, setActive] = useState(false)
 
@@ -58,11 +60,11 @@ const WithdrawSection = () => {
                 </Flex>
                 <div className="withdraw--value--block">
                    <div className="value--subtitle red">locked</div>
-                   <Text ml="20px" fontSize="32px" fontWeight="500" width="100%">0.0000 VRP</Text>
+                   <Text ml="20px" textAlign="center" fontSize="32px" fontWeight="500" width="100%">{State.KPI.balanceLocked }.00 VRP</Text>
                 </div>
                 <div className="withdraw--value--block">
                    <div className="value--subtitle green">unlocked</div>
-                   <Text ml="20px" fontSize="32px" fontWeight="500" width="100%">0.0000 VRP</Text>
+                   <Text ml="20px" textAlign="center" fontSize="32px" fontWeight="500" width="100%">{State.KPI.balanceAvailable }.00 VRP</Text>
                 </div>
                   {/* <StyledButton onClick={WithdrawStart} mt="40px" ml="20px">
                     Withdraw

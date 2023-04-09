@@ -3,6 +3,7 @@ import Web3 from 'web3';
 import { actions } from './reducer'
 import * as config from '../config'
 import store from './store'
+import { KPI } from 'types';
 
 const env = window.ethereum
 // let getterWeb3 = new Web3(config.rpcUrl, config.connectOptions)
@@ -10,6 +11,20 @@ const env = window.ethereum
 let isFirstRequestAccount = false
 
 export const fetcher: Fetcher = (url : string) => fetch(url).then((response =>response.json()))
+
+export async function RequestUserData ( address ) {
+      const url = config.apiUserDataUrl + address
+      const response = await fetch(url)
+      const UserData = await response.json()
+
+      const FilteredData : KPI = {
+         refNumber : UserData.refCount ? Number(UserData.refCount) : 0,
+         balanceLocked : UserData.balanceScheduled ? Number(UserData.balanceScheduled) : 0,
+         balanceAvailable : UserData.balanceAvailable ? Number(UserData.balanceAvailable) : 0
+      }
+
+      return FilteredData
+}
 
 export async function RequestWallet () {
 

@@ -3,6 +3,7 @@ import { MediaQueries } from "types"
 export const networkId = 56
 export const mobileUrl = "https://metamask.app.link/dapp/sale.vorpal.finance/"
 export const defaultApiUrl = "https://staging-api.vorpal.finance/api"
+export const apiUserDataUrl = "https://staging-api.vorpal.finance/api/getownerdata/"
 export const rpc = "https://bsc-dataseed.binance.org/"
 
 export const connectOptions = {

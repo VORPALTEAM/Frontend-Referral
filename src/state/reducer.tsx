@@ -1,20 +1,27 @@
 import { createReducer, createAction, combineReducers } from '@reduxjs/toolkit';
-import { stringAction, stringArrAction, modals } from 'types'
+import { stringAction, stringArrAction, modals, KPI, KPIAction } from 'types'
 import * as config from 'config'
 
 const openedModal : modals= 'none' 
+const DefaultKPI : KPI = {
+    refNumber: 0,
+    balanceLocked: 0,
+    balanceAvailable: 0
+}
 const actionNames = {
     setAddress: "SET_ADDRESS",
     openModal: "OPEN_MODAL",
     notify: "notify",
-    setIds: "ids"
+    setIds: "ids",
+    KpiData: "kpi_data"
 }
 
 export const actions = {
     setAddress: createAction<string>(actionNames.setAddress),
     openModal: createAction<string>(actionNames.openModal),
     notify: createAction<string>(actionNames.notify),
-    setIds: createAction<string[]>("ids")
+    setIds: createAction<string[]>(actionNames.setIds),
+    setKpi: createAction<KPI>(actionNames.KpiData)
 }
 
 const UpdateAccount = (state = "", action: stringAction) => {
@@ -46,8 +53,17 @@ const SetNotify = (state = "", action: stringAction) => {
 
 const UpdateRefLinks = (state = [], action: stringArrAction) => {
   switch(action.type) {
-    case "ids" : 
+    case actionNames.setIds : 
       return (action.payload) ? action.payload : state
+    default :
+      return state
+  }
+}
+
+const UpdateKPI = (state = DefaultKPI, action: KPIAction) => {
+  switch(action.type) {
+    case actionNames.KpiData : 
+      return action.payload
     default :
       return state
   }
@@ -57,7 +73,8 @@ export const RootReducer = combineReducers ({
     account: UpdateAccount,
     modal: SelectModal,
     notify: SetNotify,
-    refLinks: UpdateRefLinks
+    refLinks: UpdateRefLinks,
+    KPI: UpdateKPI
 })
 
 export type RootState = ReturnType<typeof RootReducer>

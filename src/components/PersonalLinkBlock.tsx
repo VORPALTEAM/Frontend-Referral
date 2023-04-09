@@ -22,6 +22,7 @@ const PersonalLinkBlock = ({ account }) => {
   })
 
   const [isRequested, setActive] = useState(false)
+  const [refNumber, UpdateRefNumber] = useState(0)
   const [clientAccount, setClientAccount] = useState(account)
   const [referralIds, setReferralIds] = useState<string[]>([])
   const dispatch = useDispatch()
@@ -36,10 +37,17 @@ const PersonalLinkBlock = ({ account }) => {
     setActive(true)
   }
 
+  const RequestRefData = async () => {
+     
+  }
+
   async function handleStatusChange () {
     if (!isRequested && State.account) {
 
       const refLinks = await Hooks.RequestLinks(clientAccount)
+      const UserData = await Hooks.RequestUserData(clientAccount)
+
+      dispatch(actions.setKpi(UserData))
 
       try {
         let linkArray = Array.from(refLinks.result)
@@ -111,7 +119,7 @@ const PersonalLinkBlock = ({ account }) => {
               <div className="YouGet--Section">
                 <div className="get--section--inner">
                   <div className="partner--counter">
-                     1300
+                     {State.KPI.refNumber}
                   </div>
                   <div className="partner--counter--heading">
                      People are <br />assigned to the link
