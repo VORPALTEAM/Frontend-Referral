@@ -60,7 +60,7 @@ const ReferralHero = ({ isLogin = true, account = "" }) => {
         {'Invite your friends. Earn cryptocurrency together'}
        </HeroHeading>
        <BorderedHeading />
-         <Description mb="21px" width="556px">Earn up to <b className="yellow">20%</b> from friends swap commission on VORPAL and <b className="yellow">5%</b> from their earnings on Farms and Launch pools.</Description>
+         <Description mb="21px" width="556px">Earn <b className="yellow">5%</b> from your friends' USD investments in our project, converted in VRP by actual cost. </Description>
          {isLogin ? 
          <a href={descriptionUrl}>
             <Text color="#ACF800" mb="21px" fontFamily="Roboto" fontSize="21px" fontWeight="700" display="flex">
