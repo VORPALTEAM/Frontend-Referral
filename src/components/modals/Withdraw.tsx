@@ -59,6 +59,8 @@ const WithdrawModal = () => {
          signature: signature
       }
 
+      console.log(RqBody)
+
       const WithdrawResponse = await fetch(withdrawUrl, {
          headers: {
            'Accept': 'application/json',
@@ -67,6 +69,7 @@ const WithdrawModal = () => {
          method: "POST",
          body: JSON.stringify(RqBody)
         })
+
       const rs = await WithdrawResponse.json()
 
       const UserData = await RequestUserData(acc)
