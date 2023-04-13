@@ -13,6 +13,7 @@ import {
 import { Button } from 'toolkit/Button'
 import Web3 from 'web3'
 import { connectOptions, rpc, withdrawUrl } from 'config'
+import { RequestUserData } from 'state/hooks'
 
 const WithdrawModal = () => {
 
@@ -67,6 +68,11 @@ const WithdrawModal = () => {
          body: JSON.stringify(RqBody)
         })
       const rs = await WithdrawResponse.json()
+
+      const UserData = await RequestUserData(acc)
+
+      dispatch(actions.setKpi(UserData))
+
       console.log(rs)
      } else {
         return false;
