@@ -76,7 +76,6 @@ const WithdrawModal = () => {
 
       dispatch(actions.setKpi(UserData))
 
-      console.log(rs)
      } else {
         return false;
      }
