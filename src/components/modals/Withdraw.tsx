@@ -12,7 +12,7 @@ import {
   StyledButton } from './common'
 import { Button } from 'toolkit/Button'
 import Web3 from 'web3'
-import { connectOptions, rpc } from 'config'
+import { connectOptions, rpc, withdrawUrl } from 'config'
 
 const WithdrawModal = () => {
 
@@ -39,16 +39,35 @@ const WithdrawModal = () => {
   `
 
   const WithdrawRequest = async() => {
-     const msg = "withdraw_"
+
      const acc = State.account
      if (acc) {
       const web3 = new Web3(Web3.givenProvider || rpc)
-      const signature = await web3.eth.personal.sign(msg, acc, '');
-      console.log(signature)
+
       let time = Math.round(new Date().getTime() / 1000)
       time -= time % 3600
+      const msg = "withdraw_" + time
+      console.log(msg)
+      const signature = await web3.eth.personal.sign(msg, acc, '');
       const recover = await web3.eth.personal.ecRecover(msg, signature)
+
       console.log(recover)
+
+      const RqBody = {
+         address: acc,
+         signature: signature
+      }
+
+      const WithdrawResponse = await fetch(withdrawUrl, {
+         headers: {
+           'Accept': 'application/json',
+           'Content-Type': 'application/json'
+         },
+         method: "POST",
+         body: JSON.stringify(RqBody)
+        })
+      const rs = await WithdrawResponse.json()
+      console.log(rs)
      } else {
         return false;
      }
@@ -66,7 +85,7 @@ const WithdrawModal = () => {
         padding: "20px 24px"
      }}>
        
-       <Text fontSize="12px" fontWeight="500" mt="10px">Withdraw { State.KPI.balanceAvailable } VRP</Text>
+       <Text fontSize="24px" textAlign="center" fontWeight="500" mt="10px">Withdraw { State.KPI.balanceAvailable } VRP</Text>
        <div className="Buttons" style={{
           display: 'flex',
           justifyContent: 'space-between',

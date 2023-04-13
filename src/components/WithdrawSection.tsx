@@ -29,9 +29,14 @@ const WithdrawSection = () => {
        width: 160px;
        height: 40px;
        background: #353547;
-       color: #666171;
+       color: #FFF;
        font-size: 18px;
-        border-radius: 6px;
+       border-radius: 6px;
+
+       &.disabled {
+          color: #666171;
+          pointer-events: none;
+       }
     `
 
     return (
@@ -66,9 +71,9 @@ const WithdrawSection = () => {
                    <div className="value--subtitle green">unlocked</div>
                    <Text ml="20px" textAlign="center" fontSize="32px" fontWeight="500" width="100%">{State.KPI.balanceAvailable }.00 VRP</Text>
                 </div>
-                  {/* <StyledButton onClick={WithdrawStart} mt="10px" ml="32px" mb="20px">
+                  <StyledButton className={State.KPI.balanceAvailable < 400 ? "disabled" : ""} onClick={WithdrawStart} mt="10px" ml="32px" mb="20px">
                     Withdraw
-                 </StyledButton> */}
+                 </StyledButton>
             </div>
         </Flex>
       )
