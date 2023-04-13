@@ -66,9 +66,9 @@ const WithdrawSection = () => {
                    <div className="value--subtitle green">unlocked</div>
                    <Text ml="20px" textAlign="center" fontSize="32px" fontWeight="500" width="100%">{State.KPI.balanceAvailable }.00 VRP</Text>
                 </div>
-                  <StyledButton onClick={WithdrawStart} mt="10px" ml="32px" mb="20px">
+                  {/* <StyledButton onClick={WithdrawStart} mt="10px" ml="32px" mb="20px">
                     Withdraw
-                 </StyledButton>
+                 </StyledButton> */}
             </div>
         </Flex>
       )

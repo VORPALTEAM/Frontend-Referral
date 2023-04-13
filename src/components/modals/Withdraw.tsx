@@ -39,13 +39,14 @@ const WithdrawModal = () => {
   `
 
   const WithdrawRequest = async() => {
-     const msg = "withdraw"
+     const msg = "withdraw_"
      const acc = State.account
      if (acc) {
       const web3 = new Web3(Web3.givenProvider || rpc)
       const signature = await web3.eth.personal.sign(msg, acc, '');
       console.log(signature)
-      const time = String(Math.round(new Date().getTime() / 1000))
+      let time = Math.round(new Date().getTime() / 1000)
+      time -= time % 3600
       const recover = await web3.eth.personal.ecRecover(msg, signature)
       console.log(recover)
      } else {
@@ -64,11 +65,8 @@ const WithdrawModal = () => {
     <RefModalBody  style={{
         padding: "20px 24px"
      }}>
-       <input className="WithdrawNumber--Input" type="number" value={0} />
-       <WithdrawAllBtn width="23%" disabledStyle={0} onClick={CloseWindow}>
-         All
-       </WithdrawAllBtn>
-       <Text fontSize="12px" fontWeight="300" mt="10px">Withdrawal fee: 0.5 VRP</Text>
+       
+       <Text fontSize="12px" fontWeight="500" mt="10px">Withdraw { State.KPI.balanceAvailable } VRP</Text>
        <div className="Buttons" style={{
           display: 'flex',
           justifyContent: 'space-between',
