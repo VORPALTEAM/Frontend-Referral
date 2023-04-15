@@ -71,8 +71,8 @@ const WithdrawSection = () => {
                    <div className="value--subtitle green">unlocked</div>
                    <Text ml="20px" textAlign="center" fontSize="32px" fontWeight="500" width="100%">{State.KPI.balanceAvailable }.00 VRP</Text>
                 </div>
-                  <StyledButton className={State.KPI.balanceAvailable < 400 ? "disabled" : ""} onClick={WithdrawStart} mt="10px" ml="32px" mb="20px">
-                    Withdraw
+                  <StyledButton className={State.KPI.balanceAvailable < 400 || State.isPending ? "disabled" : ""} onClick={WithdrawStart} mt="10px" ml="32px" mb="20px">
+                    {State.isPending ? "Pending..." : "Withdraw"}
                  </StyledButton>
             </div>
         </Flex>

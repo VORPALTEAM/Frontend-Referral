@@ -43,23 +43,23 @@ const WithdrawModal = () => {
 
      const acc = State.account
      if (acc) {
+      // dispatch(actions.setTxPending(true))
+      // CloseWindow()
       const web3 = new Web3(Web3.givenProvider || rpc)
 
       let time = Math.round(new Date().getTime() / 1000)
       time -= time % 3600
       const msg = "withdraw_" + time
-      console.log(msg)
-      const signature = await web3.eth.personal.sign(msg, acc, '');
-      const recover = await web3.eth.personal.ecRecover(msg, signature)
 
-      console.log(recover)
+      const signature = await web3.eth.personal.sign(msg, acc, '');
 
       const RqBody = {
          address: acc,
          signature: signature
       }
 
-      console.log(RqBody)
+      dispatch(actions.setTxPending(true))
+      CloseWindow()
 
       const WithdrawResponse = await fetch(withdrawUrl, {
          headers: {
@@ -75,7 +75,7 @@ const WithdrawModal = () => {
       const UserData = await RequestUserData(acc)
 
       dispatch(actions.setKpi(UserData))
-
+      dispatch(actions.setTxPending(false))
      } else {
         return false;
      }

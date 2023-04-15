@@ -1,5 +1,5 @@
 import { createReducer, createAction, combineReducers } from '@reduxjs/toolkit';
-import { stringAction, stringArrAction, modals, KPI, KPIAction } from 'types'
+import { stringAction, stringArrAction, modals, KPI, KPIAction, booleanAction } from 'types'
 import * as config from 'config'
 
 const openedModal : modals= 'none' 
@@ -13,7 +13,8 @@ const actionNames = {
     openModal: "OPEN_MODAL",
     notify: "notify",
     setIds: "ids",
-    KpiData: "kpi_data"
+    KpiData: "kpi_data",
+    TxPending: "is_tx_pending"
 }
 
 export const actions = {
@@ -21,7 +22,8 @@ export const actions = {
     openModal: createAction<string>(actionNames.openModal),
     notify: createAction<string>(actionNames.notify),
     setIds: createAction<string[]>(actionNames.setIds),
-    setKpi: createAction<KPI>(actionNames.KpiData)
+    setKpi: createAction<KPI>(actionNames.KpiData),
+    setTxPending: createAction<boolean>(actionNames.TxPending)
 }
 
 const UpdateAccount = (state = "", action: stringAction) => {
@@ -69,12 +71,22 @@ const UpdateKPI = (state = DefaultKPI, action: KPIAction) => {
   }
 }
 
+const SetPending = (state = false, action: booleanAction) => {
+  switch(action.type) {
+    case actionNames.TxPending : 
+      return action.payload
+    default :
+      return state
+  }
+}
+
 export const RootReducer = combineReducers ({
     account: UpdateAccount,
     modal: SelectModal,
     notify: SetNotify,
     refLinks: UpdateRefLinks,
-    KPI: UpdateKPI
+    KPI: UpdateKPI,
+    isPending: SetPending
 })
 
 export type RootState = ReturnType<typeof RootReducer>

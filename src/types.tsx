@@ -47,6 +47,11 @@ export type numberAction = {
     payload: number
 }
 
+export type booleanAction = {
+  type: string,
+  payload: boolean
+}
+
 export type stringArrAction = {
     type: string,
     payload: string[]

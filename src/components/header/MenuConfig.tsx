@@ -41,6 +41,12 @@ export const menu = [
         style: styles.sale,
         submenu: []
     },
+	{
+        name: "LitePaper",
+        url: `https://drive.google.com/file/d/1cIb9qYmjKwp0Br5g-tJvyCzQ6V_5iW8T/view?usp=sharing`,
+        style: styles.default,
+        submenu: []
+    },
     {
         name: "Socials",
         url: undefined,
