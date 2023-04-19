@@ -4,7 +4,7 @@ export const networkId = 56
 export const mobileUrl = "https://metamask.app.link/dapp/sale.vorpal.finance/"
 export const defaultApiUrl = "https://staging-api.vorpal.finance/api"
 export const apiUserDataUrl = "https://staging-api.vorpal.finance/api/getownerdata/"
-export const withdrawUrl = "https://staging-api.vorpal.finance/api/withdraw/"
+export const withdrawUrl = "https://staging-api.vorpal.finance/api/withdraw"
 export const rpc = "https://bsc-dataseed.binance.org/"
 
 export const connectOptions = {
