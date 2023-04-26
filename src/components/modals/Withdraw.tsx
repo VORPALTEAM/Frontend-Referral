@@ -50,8 +50,14 @@ const WithdrawModal = () => {
       let time = Math.round(new Date().getTime() / 1000)
       time -= time % 3600
       const msg = "withdraw_" + time
-
-      const signature = await web3.eth.personal.sign(msg, acc, '');
+      let signature = ""
+      
+      try {
+         signature = await web3.eth.personal.sign(msg, acc, '');
+      } catch (e) {
+         console.log(e.message)
+         return;
+      }
 
       const RqBody = {
          address: acc,
@@ -60,8 +66,6 @@ const WithdrawModal = () => {
 
       dispatch(actions.setTxPending(true))
       CloseWindow()
-
-      console.log(RqBody)
 
       const WithdrawResponse = await fetch(withdrawUrl, {
          method: "POST",
@@ -77,7 +81,10 @@ const WithdrawModal = () => {
       const UserData = await RequestUserData(acc)
 
       dispatch(actions.setKpi(UserData))
+      console.log("Pending check : ")
+      console.log(State.isPending)
       dispatch(actions.setTxPending(false))
+      console.log(State.isPending)
      } else {
         return false;
      }
