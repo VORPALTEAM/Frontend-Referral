@@ -22,13 +22,13 @@ const ErrorModal = () => {
     }, [])
 
     return(
-    <div className="copy--modal" style={{
+    <div className="error--modal" style={{
         bottom: btnPosition
     }}>
-      <div className="copy--modal--inner">
-        <div className="copy--mark">
+      <div className="error--modal--inner">
+        {/* <div className="copy--mark">
             <img src="/images/mark.svg" />
-        </div>
+        </div> */}
         <div className="copy--notify--text">
            {State.LastError}
         </div>

@@ -37,10 +37,6 @@ const PersonalLinkBlock = ({ account }) => {
     setActive(true)
   }
 
-  const RequestRefData = async () => {
-     
-  }
-
   async function handleStatusChange () {
     if (!isRequested && State.account) {
 

@@ -1589,7 +1589,21 @@ input:checked + .checker:before {
   transition-timing-function: linear;
 }
 
-.copy--modal--inner {
+.error--modal {
+  position: fixed;
+  z-index: 699;
+  width: 460px;
+  height: 120px;
+  top: 0;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #e56e9b 0%, #e11b38 100%);
+  transition-property:top;
+  transition-duration: .4s;
+  transition-timing-function: linear;
+}
+
+.copy--modal--inner,
+.error--modal--inner {
   margin: 20px;
   display: flex;
   width: 100%;
