@@ -1648,7 +1648,7 @@ input:checked + .checker:before {
   right: 10%;
   border-radius: 20px;
   background: linear-gradient(90deg, #9ee185 0%, #20e70e 100%);
-  transition-property:bottom;
+  transition-property: bottom;
   transition-duration: .4s;
   transition-timing-function: linear;
 }

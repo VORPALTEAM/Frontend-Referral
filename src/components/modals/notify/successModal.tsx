@@ -20,14 +20,14 @@ const SuccessModal = () => {
 
     useEffect(() => {
         setBtnPosition('10%')
-        /* setTimeout(() => {
+        setTimeout(() => {
             dispatch(actions.notify(notifyNames.none))
-          }, 6000) */
+          }, 6000)
     }, [])
 
     return(
     <div className="success--modal" style={{
-        top: btnPosition
+        bottom: btnPosition
     }}>
       <div className="success--modal--inner">
         {/* <div className="copy--mark">
