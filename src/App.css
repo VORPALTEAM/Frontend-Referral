@@ -87,6 +87,24 @@ body {
   }
 }
 
+@keyframes roundingBorder_ok {
+  from {
+    background: conic-gradient(#176703 0deg, #46a00b 90deg, #99e473 90deg, #8ad955 360deg);
+  }
+  25% {
+    background: conic-gradient(#176703 0deg, #46a00b  135deg, #99e473  135deg, #8ad955 360deg);
+  }
+  50% {
+    background: conic-gradient(#176703 0deg, #46a00b  225deg, #99e473  225deg, #8ad955 360deg);
+  }
+  75% {
+    background: conic-gradient(#176703 0deg, #46a00b  270deg, #99e473  270deg, #8ad955 360deg);
+  }
+  to {
+    background: conic-gradient(#176703 0deg, #46a00b  359deg, #99e473 359deg, #8ad955 360deg);
+  }
+}
+
 @keyframes roundingReverse {
   from {
     transform: rotate(-359deg);
@@ -1687,6 +1705,7 @@ input:checked + .checker:before {
 .ok--bkg {
   width: 69px;
   background: conic-gradient(#176703 0deg, #46a00b 90deg, #99e473 90deg, #8ad955 360deg);
+  animation: roundingBorder_ok;
   animation-duration: 6s;
 }
 
