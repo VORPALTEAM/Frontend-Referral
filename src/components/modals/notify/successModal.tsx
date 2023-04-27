@@ -34,7 +34,7 @@ const SuccessModal = () => {
             <img src="/images/mark.svg" />
         </div> */}
         <div className="copy--notify--text">
-           {State.LastError}
+            Withdrawai successful! Check VRP balance at your wallet
         </div>
         <div className="copy--close--icon ok--bkg" onClick={CloseNotify}>
             <div className="copy--close--icon--inner">
