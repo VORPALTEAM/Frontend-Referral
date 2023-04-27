@@ -1,3 +1,4 @@
+import { notifyNames } from 'config'
 import React, {useState, useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState, actions } from 'state/reducer'
@@ -19,6 +20,9 @@ const ErrorModal = () => {
 
     useEffect(() => {
         setBtnPosition('10%')
+        setTimeout(() => {
+            dispatch(actions.notify(notifyNames.none))
+          }, 3000)
     }, [])
 
     return(
@@ -34,7 +38,7 @@ const ErrorModal = () => {
         </div>
         <div className="copy--close--icon err--bkg" onClick={CloseNotify}>
             <div className="copy--close--icon--inner">
-                 <img src="/images/close.svg" />
+                 <img src="/images/close_red.svg" />
             </div>
         </div>
       </div>

@@ -1644,7 +1644,8 @@ input:checked + .checker:before {
 }
 
 .err--bkg {
-  background: conic-gradient(rgba(0,0,0,0.1) 0deg, rgba(0,0,0,0.1) 90deg, #650f34 90deg, #6e051e 360deg);
+  width: 52px;
+  background: conic-gradient(#650f34 0deg, #6e051e 90deg, #c15770 90deg, #dd4055 360deg);
 }
 
 .copy--close--icon--inner {
