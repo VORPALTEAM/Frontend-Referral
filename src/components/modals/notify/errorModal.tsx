@@ -18,12 +18,12 @@ const ErrorModal = () => {
     }
 
     useEffect(() => {
-        setBtnPosition('90%')
+        setBtnPosition('10%')
     }, [])
 
     return(
     <div className="error--modal" style={{
-        bottom: btnPosition
+        top: btnPosition
     }}>
       <div className="error--modal--inner">
         {/* <div className="copy--mark">
@@ -32,7 +32,7 @@ const ErrorModal = () => {
         <div className="copy--notify--text">
            {State.LastError}
         </div>
-        <div className="copy--close--icon" onClick={CloseNotify}>
+        <div className="copy--close--icon err--bkg" onClick={CloseNotify}>
             <div className="copy--close--icon--inner">
                  <img src="/images/close.svg" />
             </div>

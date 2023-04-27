@@ -1592,9 +1592,10 @@ input:checked + .checker:before {
 .error--modal {
   position: fixed;
   z-index: 699;
-  width: 460px;
-  height: 120px;
+  width: 440px;
+  height: 90px;
   top: 0;
+  right: 10%;
   border-radius: 20px;
   background: linear-gradient(90deg, #e56e9b 0%, #e11b38 100%);
   transition-property:top;
@@ -1608,6 +1609,10 @@ input:checked + .checker:before {
   display: flex;
   width: 100%;
 
+}
+
+.error--modal--inner {
+  width: 90%;
 }
 
 .copy--mark {
@@ -1630,12 +1635,16 @@ input:checked + .checker:before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: conic-gradient(rgba(0,0,0,0.1) 0deg, rgba(0,0,0,0.1) 90deg, #313149 90deg, #313149 360deg);
+  background: conic-gradient(rgba(0,0,0,0.1) 0deg, rgba(0,0,0,0.1) 90deg, #49313b 90deg, #313149 360deg);
   animation: roundingBorder;
   animation-duration: 3s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   cursor: pointer;
+}
+
+.err--bkg {
+  background: conic-gradient(rgba(0,0,0,0.1) 0deg, rgba(0,0,0,0.1) 90deg, #650f34 90deg, #6e051e 360deg);
 }
 
 .copy--close--icon--inner {
