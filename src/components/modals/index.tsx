@@ -10,6 +10,7 @@ import { RootState, actions } from 'state/reducer'
 import { modalNames, notifyNames } from 'config'
 import ShareModal from './notify/shareModal'
 import LoginModal from './login'
+import ErrorModal from './notify/errorModal'
  
 const ModalRefContainer = () => {
 
@@ -45,6 +46,8 @@ const ModalRefContainer = () => {
       switch (windowName) {
         case notifyNames.copy:
           return <CopyModal />
+        case notifyNames.withdrawErr:
+          return <ErrorModal />
         case modalNames.withdraw :
           return <ShareModal />
         default: 

@@ -12,7 +12,7 @@ import {
   StyledButton } from './common'
 import { Button } from 'toolkit/Button'
 import Web3 from 'web3'
-import { connectOptions, rpc, withdrawUrl } from 'config'
+import { connectOptions, notifyNames, rpc, withdrawUrl } from 'config'
 import { RequestUserData } from 'state/hooks'
 
 const WithdrawModal = () => {
@@ -55,7 +55,8 @@ const WithdrawModal = () => {
       try {
          signature = await web3.eth.personal.sign(msg, acc, '');
       } catch (e) {
-         console.log(e.message)
+         dispatch(actions.emessage(e.message))
+         dispatch(actions.notify(notifyNames.withdrawErr))
          return;
       }
 

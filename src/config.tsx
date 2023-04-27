@@ -43,6 +43,8 @@ export const modalNames = {
 export const notifyNames = {
    none: "none",
    copy: "copy",
+   withdrawOk: "withdrawSuccess",
+   withdrawErr: "withdrawErr",
    share: "share"
 }
 

@@ -14,13 +14,15 @@ const actionNames = {
     notify: "notify",
     setIds: "ids",
     KpiData: "kpi_data",
-    TxPending: "is_tx_pending"
+    TxPending: "is_tx_pending",
+    ErrMessage: "error_message"
 }
 
 export const actions = {
     setAddress: createAction<string>(actionNames.setAddress),
     openModal: createAction<string>(actionNames.openModal),
     notify: createAction<string>(actionNames.notify),
+    emessage: createAction<string>(actionNames.ErrMessage),
     setIds: createAction<string[]>(actionNames.setIds),
     setKpi: createAction<KPI>(actionNames.KpiData),
     setTxPending: createAction<boolean>(actionNames.TxPending)
@@ -33,6 +35,15 @@ const UpdateAccount = (state = "", action: stringAction) => {
         default :
           return state
       }
+}
+
+const SaveErrMessage = (state = "", action: stringAction) => {
+  switch(action.type) {
+      case actionNames.ErrMessage : 
+        return action.payload
+      default :
+        return state
+    }
 }
 
 const SelectModal = (state = openedModal, action: stringAction) => {
@@ -86,7 +97,8 @@ export const RootReducer = combineReducers ({
     notify: SetNotify,
     refLinks: UpdateRefLinks,
     KPI: UpdateKPI,
-    isPending: SetPending
+    isPending: SetPending,
+    LastError: SaveErrMessage
 })
 
 export type RootState = ReturnType<typeof RootReducer>
