@@ -78,14 +78,17 @@ const WithdrawModal = () => {
         })
 
       const rs = await WithdrawResponse.json()
-
+      if (!rs.success) {
+         dispatch(actions.emessage(rs.message))
+         dispatch(actions.notify(notifyNames.withdrawErr))
+      } else {
+         dispatch(actions.notify(notifyNames.withdrawOk))
+      }
       const UserData = await RequestUserData(acc)
 
       dispatch(actions.setKpi(UserData))
-      console.log("Pending check : ")
-      console.log(State.isPending)
       dispatch(actions.setTxPending(false))
-      console.log(State.isPending)
+
      } else {
         return false;
      }

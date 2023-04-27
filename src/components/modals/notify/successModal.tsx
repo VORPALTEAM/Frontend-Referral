@@ -6,7 +6,7 @@ import styled, { keyframes } from 'styled-components'
 import { ShareReferralIcon, 
          CopyClipboardIcon } from 'toolkit/Svg'
 
-const ErrorModal = () => {
+const SuccessModal = () => {
 
     const dispatch = useDispatch()
     const State = useSelector((state: RootState) => {
@@ -20,29 +20,29 @@ const ErrorModal = () => {
 
     useEffect(() => {
         setBtnPosition('10%')
-        setTimeout(() => {
+        /* setTimeout(() => {
             dispatch(actions.notify(notifyNames.none))
-          }, 6000)
+          }, 6000) */
     }, [])
 
     return(
-    <div className="error--modal" style={{
+    <div className="success--modal" style={{
         top: btnPosition
     }}>
-      <div className="error--modal--inner">
+      <div className="success--modal--inner">
         {/* <div className="copy--mark">
             <img src="/images/mark.svg" />
         </div> */}
         <div className="copy--notify--text">
            {State.LastError}
         </div>
-        <div className="copy--close--icon err--bkg" onClick={CloseNotify}>
+        <div className="copy--close--icon ok--bkg" onClick={CloseNotify}>
             <div className="copy--close--icon--inner">
-                 <img src="/images/close_red.svg" />
+                 <img src="/images/close_green.svg" />
             </div>
         </div>
       </div>
     </div>)
 }
 
-export default ErrorModal
+export default SuccessModal

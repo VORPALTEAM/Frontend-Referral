@@ -1603,15 +1603,31 @@ input:checked + .checker:before {
   transition-timing-function: linear;
 }
 
+.success--modal {
+  position: fixed;
+  z-index: 699;
+  width: 440px;
+  height: 90px;
+  bottom: 0;
+  right: 10%;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #9ee185 0%, #20e70e 100%);
+  transition-property:bottom;
+  transition-duration: .4s;
+  transition-timing-function: linear;
+}
+
 .copy--modal--inner,
-.error--modal--inner {
+.error--modal--inner,
+.success--modal--inner {
   margin: 20px;
   display: flex;
   width: 100%;
 
 }
 
-.error--modal--inner {
+.error--modal--inner,
+.success--modal--inner {
   width: 90%;
 }
 
@@ -1646,6 +1662,13 @@ input:checked + .checker:before {
 .err--bkg {
   width: 52px;
   background: conic-gradient(#650f34 0deg, #6e051e 90deg, #c15770 90deg, #dd4055 360deg);
+  animation-duration: 6s;
+}
+
+.ok--bkg {
+  width: 52px;
+  background: conic-gradient(#176703 0deg, #46a00b 90deg, #99e473 90deg, #8ad955 360deg);
+  animation-duration: 6s;
 }
 
 .copy--close--icon--inner {

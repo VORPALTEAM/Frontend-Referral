@@ -11,6 +11,7 @@ import { modalNames, notifyNames } from 'config'
 import ShareModal from './notify/shareModal'
 import LoginModal from './login'
 import ErrorModal from './notify/errorModal'
+import SuccessModal from './notify/successModal'
  
 const ModalRefContainer = () => {
 
@@ -48,6 +49,8 @@ const ModalRefContainer = () => {
           return <CopyModal />
         case notifyNames.withdrawErr:
           return <ErrorModal />
+          case notifyNames.withdrawOk:
+          return <SuccessModal />
         case modalNames.withdraw :
           return <ShareModal />
         default: 
