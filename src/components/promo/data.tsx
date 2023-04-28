@@ -27,9 +27,9 @@ export const steps : PromoItemData[] = [
         id: 3,
         icon: "/images/referral/promo/step_three.png",
         heading: "Earn crypto",
-        description: "Receive referral rewards in Vorpal tokens from your friends’ earnings & swaps",
+        description: "Receive referral rewards in Vorpal tokens from your friends’ VRP and VAO buyings",
         expHeading: "Swaps Referral Rewards",
-        expDescription: "Get up to 20% from friends’ swap commission each time your friend makes a swap! Receive your reward immediately after the swap is made. Swaps referral program will be active for certain pairs only",
+        expDescription: "Get 3% from friends’ investments each time your friend makes a buying! Receive your reward through vesting the same as he",
         expLink: "/",
         expLinkText: "Read more",
         textIcon: true
