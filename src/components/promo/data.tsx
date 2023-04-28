@@ -6,8 +6,8 @@ export const steps : PromoItemData[] = [
         icon: "/images/referral/promo/step_one.png",
         heading: "Get a referral link",
         description: "Connect a wallet and generate your referral link in the Referral section",
-        expHeading: "Farms Referral Rewards",
-        expDescription: "Gain 5% from your friends earnings on Farms! Your rewards will be displayed on the referral balance at the moment your invited friends withdraw their earned Vorpal tokens",
+        expHeading: "Buying Referral Rewards",
+        expDescription: "When your friend connected a wallet, he will immediately saved as a your referral. All his buyings will bring you an income",
         expLink: "/",
         expLinkText: "Read more",
         textIcon: true
@@ -17,8 +17,8 @@ export const steps : PromoItemData[] = [
         icon: "/images/referral/promo/step_two.png",
         heading: "Invite friends",
         description: "Invite your friends to register via your referral link",
-        expHeading: "Launchpools Referral Rewards",
-        expDescription: "Get 5% of from friends’ profit obtained in Launchpools! The reward is only valid for the pool in which BSW is staked in return for more VRP",
+        expHeading: "Referral reward's vesings",
+        expDescription: "Your VRP profit will be unlocked when it will passed a vesting the same as your friends' buyings",
         expLink: "/",
         expLinkText: "Read more",
         textIcon: true
